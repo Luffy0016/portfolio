@@ -15,12 +15,20 @@ const Navigation = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-xl border-b border-white/10 animate-slide-down">
       <div className="max-w-6xl mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="text-xl font-light text-white hover:scale-110 transition-transform duration-300">
-            MAHADEV
+
+          
+          <div className="flex items-center space-x-2 group cursor-pointer hover:scale-110 transition-transform duration-300">
+            <img
+              src="logo.png"
+              alt="R.Mahadev Logo"
+              className="h-10 w-10 rounded-full object-cover"
+            />
+            <span className="text-white font-bold text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              R.Mahadev
+            </span>
           </div>
 
-          {/* Desktop Navigation */}
+           
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <a
@@ -33,16 +41,16 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* Mobile menu button */}
+          
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden p-2 hover:scale-110 transition-transform duration-300"
           >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isOpen ? <X className="w-6 h-6 text-white" /> : <Menu className="w-6 h-6 text-white" />}
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+         
         {isOpen && (
           <div className="md:hidden py-4 border-t border-white/10 bg-black/30 backdrop-blur-xl animate-slide-down">
             <div className="flex flex-col space-y-4">
