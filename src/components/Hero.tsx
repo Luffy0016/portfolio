@@ -7,7 +7,7 @@ const Hero = () => {
       <div className="max-w-6xl mx-auto text-center">
         {/* Main heading */}
         <h1 className="text-6xl lg:text-8xl xl:text-9xl font-light text-white mb-8 leading-none tracking-tight animate-fade-in-up">
-          Sajan Shrestha
+        Hi, I’m Mahadev
         </h1>
         
         {/* Subtitle */}

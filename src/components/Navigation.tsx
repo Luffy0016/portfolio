@@ -17,7 +17,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="text-xl font-light text-white hover:scale-110 transition-transform duration-300">
-            SAN
+            MAHADEV
           </div>
 
           {/* Desktop Navigation */}
