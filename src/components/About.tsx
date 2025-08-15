@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowDown } from 'lucide-react'; // Added ArrowDown import
+import { ArrowDown } from 'lucide-react'; 
 
 const About = () => {
   return (
@@ -32,9 +32,9 @@ const About = () => {
               </div>
             </div>
             
-            {/* Download CV Button added here */}
+          
             <a 
-              href="/R.Mahadev-CV.pdf" // Update this path to your CV file
+              href="/R.Mahadev CV.pdf" 
               download
               className="group inline-flex items-center gap-3 bg-white/10 backdrop-blur-xl border border-white/20 text-white px-8 py-4 rounded-full hover:bg-white/20 hover:border-white/30 hover:scale-105 transition-all duration-300 text-lg font-medium shadow-2xl hover:shadow-white/10 mt-8"
             >
