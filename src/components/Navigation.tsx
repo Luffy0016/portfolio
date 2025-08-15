@@ -16,19 +16,21 @@ const Navigation = () => {
       <div className="max-w-6xl mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-16">
 
-          
-          <div className="flex items-center space-x-2 group cursor-pointer hover:scale-110 transition-transform duration-300">
+          {/* Logo + hover text */}
+          <div className="flex items-center space-x-2 group cursor-pointer">
+            {/* Logo rotates/scales */}
             <img
-              src="logo.png"
+              src="/logo.png"
               alt="R.Mahadev Logo"
-              className="h-10 w-10 rounded-full object-cover"
+              className="h-10 w-10 rounded-full object-cover transition-transform duration-300 hover:scale-110 hover:rotate-3"
             />
-            <span className="text-white font-bold text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            {/* Text fades/slides on hover with subtle glow */}
+            <span className="text-white font-bold text-lg opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 drop-shadow-[0_0_3px_#00ffff]">
               R.Mahadev
             </span>
           </div>
 
-           
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <a
@@ -41,7 +43,7 @@ const Navigation = () => {
             ))}
           </div>
 
-          
+          {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden p-2 hover:scale-110 transition-transform duration-300"
@@ -50,7 +52,7 @@ const Navigation = () => {
           </button>
         </div>
 
-         
+        {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden py-4 border-t border-white/10 bg-black/30 backdrop-blur-xl animate-slide-down">
             <div className="flex flex-col space-y-4">
@@ -73,3 +75,4 @@ const Navigation = () => {
 };
 
 export default Navigation;
+
