@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Linkedin, Twitter, Github } from 'lucide-react';
+import { Mail, Linkedin, Instagram, Github } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -21,7 +21,7 @@ const Footer = () => {
               <Linkedin className="w-5 h-5 text-slate-600 group-hover:text-blue-600 transition-colors duration-300" />
             </button>
             <button className="w-12 h-12 bg-white shadow-md rounded-full flex items-center justify-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group">
-              <Twitter className="w-5 h-5 text-slate-600 group-hover:text-blue-400 transition-colors duration-300" />
+              <Instagram className="w-5 h-5 text-slate-600 group-hover:text-blue-400 transition-colors duration-300" />
             </button>
             <button className="w-12 h-12 bg-white shadow-md rounded-full flex items-center justify-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group">
               <Github className="w-5 h-5 text-slate-600 group-hover:text-slate-800 transition-colors duration-300" />
@@ -30,7 +30,7 @@ const Footer = () => {
 
           <div className="border-t border-slate-200 pt-8">
             <p className="text-slate-500">
-              © 2024 Sajan Shrestha (SAN). Crafted with passion and attention to detail.
+              © 2025 R.Mahadev. Crafted with passion and attention to detail.
             </p>
           </div>
         </div>
@@ -40,3 +40,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
