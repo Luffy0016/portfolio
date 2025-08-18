@@ -1,107 +1,80 @@
-import React, { useEffect, useState, useRef } from "react";
-import { Palette, Smartphone, Monitor, Zap } from "lucide-react";
-
-interface Skill {
-  name: string;
-  level: number;
-}
-
-interface SkillCategory {
-  icon: JSX.Element;
-  title: string;
-  skills: Skill[];
-}
+import React from 'react';
+import { Palette, Code, Smartphone, Users, Lightbulb, Zap } from 'lucide-react';
+import { useTheme } from '../contexts/ThemeContext';
 
 const Skills: React.FC = () => {
-  const [animated, setAnimated] = useState(false);
-  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const { isDark } = useTheme();
 
-  const skillCategories: SkillCategory[] = [
+  const skillCategories = [
     {
-      icon: <Palette size={32} />,
-      title: "Visual Design",
+      title: 'Design Tools',
+      icon: Palette,
       skills: [
-        { name: "UI Design", level: 30 },
-        { name: "Brand Identity", level: 28 },
-        { name: "Typography", level: 22 },
-        { name: "Color Theory", level: 40 },
-      ],
+        { name: 'Figma', level: 95 },
+        { name: 'Adobe XD', level: 90 },
+        { name: 'Sketch', level: 85 },
+        { name: 'Photoshop', level: 88 },
+        { name: 'Illustrator', level: 82 }
+      ]
     },
     {
-      icon: <Smartphone size={32} />,
-      title: "Mobile Design",
+      title: 'Development',
+      icon: Code,
       skills: [
-        { name: "iOS Design", level: 23 },
-        { name: "Android Design", level: 39 },
-        { name: "App Store Optimization", level: 15 },
-        { name: "Mobile UX", level: 54 },
-      ],
+        { name: 'HTML/CSS', level: 92 },
+        { name: 'JavaScript', level: 85 },
+        { name: 'React', level: 80 },
+        { name: 'Vue.js', level: 75 },
+        { name: 'Tailwind CSS', level: 90 }
+      ]
     },
     {
-      icon: <Monitor size={32} />,
-      title: "Web Design",
+      title: 'UX Research',
+      icon: Users,
       skills: [
-        { name: "Responsive Design", level: 36 },
-        { name: "Web Standards", level: 31 },
-        { name: "Accessibility", level: 27 },
-        { name: "Performance", level: 23 },
-      ],
-    },
-    {
-      icon: <Zap size={32} />,
-      title: "UX Research",
-      skills: [
-        { name: "User Research", level: 59 },
-        { name: "Usability Testing", level: 42 },
-        { name: "Wireframing", level: 35 },
-        { name: "Prototyping", level: 23 },
-      ],
-    },
+        { name: 'User Interviews', level: 90 },
+        { name: 'Usability Testing', level: 88 },
+        { name: 'A/B Testing', level: 85 },
+        { name: 'Analytics', level: 82 },
+        { name: 'Wireframing', level: 95 }
+      ]
+    }
   ];
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setAnimated(true);
-            observer.disconnect(); // run only once
-          }
-        });
-      },
-      { threshold: 0.2 } // trigger when 20% is visible
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
+  const softSkills = [
+    { name: 'Problem Solving', icon: Lightbulb },
+    { name: 'Creative Thinking', icon: Zap },
+    { name: 'Communication', icon: Users },
+    { name: 'Mobile Design', icon: Smartphone }
+  ];
 
   return (
-    <section ref={sectionRef} id="skills" className="py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="skills" className={`py-20 ${isDark ? 'bg-gray-900' : 'bg-gray-50'}`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
             Skills & Expertise
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            I combine technical expertise with creative vision to deliver
-            exceptional design solutions.
+          <p className={`text-xl max-w-3xl mx-auto ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+            A comprehensive toolkit built through years of experience and continuous learning.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-3 gap-8 mb-12">
           {skillCategories.map((category, categoryIndex) => (
             <div
               key={categoryIndex}
-              className="bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl hover:shadow-lg transition-all duration-300"
+              className={`p-8 rounded-2xl ${
+                isDark ? 'bg-gray-800 border border-gray-700' : 'bg-white border border-gray-200'
+              } shadow-xl hover:shadow-2xl transition-shadow duration-300`}
             >
               <div className="flex items-center mb-6">
-                <div className="text-purple-600 mr-4">{category.icon}</div>
-                <h3 className="text-2xl font-bold text-gray-900">
+                <div className={`p-3 rounded-full mr-4 ${
+                  isDark ? 'bg-gray-700' : 'bg-gray-100'
+                }`}>
+                  <category.icon className="w-6 h-6 text-purple-500" />
+                </div>
+                <h3 className={`text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>
                   {category.title}
                 </h3>
               </div>
@@ -110,18 +83,21 @@ const Skills: React.FC = () => {
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skillIndex}>
                     <div className="flex justify-between mb-2">
-                      <span className="text-gray-700 font-medium">
+                      <span className={`font-medium ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                         {skill.name}
                       </span>
-                      <span className="text-gray-600">{skill.level}%</span>
+                      <span className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-500'}`}>
+                        {skill.level}%
+                      </span>
                     </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div className={`w-full rounded-full h-2 ${isDark ? 'bg-gray-700' : 'bg-gray-200'}`}>
                       <div
-                        className="bg-gradient-to-r from-purple-600 to-blue-600 h-2 rounded-full transition-all duration-1000 ease-out"
+                        className="h-2 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 transition-all duration-1000 ease-out"
                         style={{
-                          width: animated ? `${skill.level}%` : "0%",
+                          width: `${skill.level}%`,
+                          animation: `growWidth 2s ease-out ${skillIndex * 0.2}s both`
                         }}
-                      />
+                      ></div>
                     </div>
                   </div>
                 ))}
@@ -130,30 +106,31 @@ const Skills: React.FC = () => {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8">
-            Design Tools I Use
+        {/* Soft Skills */}
+        <div className={`p-8 rounded-2xl ${
+          isDark ? 'bg-gray-800 border border-gray-700' : 'bg-white border border-gray-200'
+        } shadow-xl`}>
+          <h3 className={`text-2xl font-bold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>
+            Core Competencies
           </h3>
-          <div className="flex flex-wrap justify-center gap-6">
-            {[
-              "Figma",
-              "Sketch",
-              "Adobe XD",
-              "Photoshop",
-              "Illustrator",
-              "Principle",
-              "InVision",
-              "Miro",
-              "Notion",
-              "Slack",
-            ].map((tool) => (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {softSkills.map((skill, index) => (
               <div
-                key={tool}
-                className="px-6 py-3 rounded-full shadow-md border-2 border-gray-100 bg-white text-gray-700 font-medium 
-                transition-all duration-300 
-                hover:bg-gradient-to-r hover:from-purple-600 hover:to-blue-600 hover:text-white hover:border-transparent hover:scale-105"
+                key={index}
+                className={`text-center p-6 rounded-xl transition-all duration-300 hover:scale-105 ${
+                  isDark ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-50 hover:bg-gray-100'
+                }`}
               >
-                {tool}
+                <div className="flex justify-center mb-4">
+                  <div className={`p-3 rounded-full ${
+                    isDark ? 'bg-gray-600' : 'bg-white'
+                  }`}>
+                    <skill.icon className="w-6 h-6 text-purple-500" />
+                  </div>
+                </div>
+                <h4 className={`font-medium ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                  {skill.name}
+                </h4>
               </div>
             ))}
           </div>
