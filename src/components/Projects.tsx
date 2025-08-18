@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ExternalLink, Github, Eye, Zap, Star } from 'lucide-react';
+import { ExternalLink, Eye, Zap, Star } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 
 const Projects: React.FC = () => {
@@ -9,30 +9,33 @@ const Projects: React.FC = () => {
   const projects = [
     {
       id: 1,
-      title: 'E-commerce Platform',
-      description: 'A modern e-commerce platform with intuitive user experience and seamless checkout process.',
-      image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
-      category: 'web',
-      tags: ['UI/UX', 'E-commerce', 'Mobile-first'],
-      year: '2024'
+      title: 'Beyond Syllabus',
+      description: ' BeyondSyllabus.in is an AI-powered platform that simplifies university syllabi with summaries, learning tasks, and real-world applications for easier study.',
+      image: 'image1.png',
+      category: 'web App',
+      tags: ['Education', 'AI Learning', 'Study Tool'],
+      year: '2025',
+      link: 'https://beyondsyllabus.in'
     },
     {
       id: 2,
-      title: 'Banking Mobile App',
-      description: 'Secure and user-friendly mobile banking application with advanced features.',
-      image: 'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=800',
-      category: 'mobile',
-      tags: ['Mobile App', 'Fintech', 'Security'],
-      year: '2024'
+      title: 'Linkdin Profile Assist',
+      description: ' A simple single-page app using HTML, JavaScript, and Tailwind CSS that leverages the Gemini API to quickly generate professional LinkedIn summaries from your skills and experience.version 2 in planning',
+      image: 'image2.png',
+      category: 'Web App',
+      tags: ['Linkdin', 'Gemini API', 'Profile Summary'],
+      year: '2025',
+      link: ' https://luffy0016.github.io/LinkedIn-Profile-Assistant/'
     },
     {
       id: 3,
-      title: 'SaaS Dashboard',
-      description: 'Clean and intuitive dashboard design for a project management SaaS platform.',
-      image: 'https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=800',
+      title: 'Portfolio website ',
+      description: 'The first portfolio website build in my 1st year with HTML,CSS&little bit of JS',
+      image: 'image3.png',
       category: 'web',
-      tags: ['Dashboard', 'SaaS', 'Analytics'],
-      year: '2023'
+      tags: ['portfolio', 'web', 'brand'],
+      year: '2024',
+      link: 'https://luffy0016.github.io/mahadev-portfolio.github.io/'
     },
     {
       id: 4,
@@ -41,7 +44,8 @@ const Projects: React.FC = () => {
       image: 'https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=800',
       category: 'mobile',
       tags: ['Healthcare', 'Mobile', 'Accessibility'],
-      year: '2023'
+      year: '2023',
+      link: 'https://your-healthcare-app.com'
     },
     {
       id: 5,
@@ -50,7 +54,8 @@ const Projects: React.FC = () => {
       image: 'https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=800',
       category: 'branding',
       tags: ['Branding', 'Identity', 'Sustainability'],
-      year: '2023'
+      year: '2023',
+      link: 'https://your-food-delivery-brand.com'
     },
     {
       id: 6,
@@ -59,7 +64,8 @@ const Projects: React.FC = () => {
       image: 'https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=800',
       category: 'web',
       tags: ['Education', 'Gamification', 'Interactive'],
-      year: '2023'
+      year: '2023',
+      link: 'https://your-learning-platform.com'
     }
   ];
 
@@ -86,7 +92,7 @@ const Projects: React.FC = () => {
           </p>
         </div>
 
-        {/* Filter Buttons */}
+      
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           {filters.map((filter) => (
             <button
@@ -107,11 +113,14 @@ const Projects: React.FC = () => {
           ))}
         </div>
 
-        {/* Projects Grid */}
+      
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project) => (
-            <div
+            <a
               key={project.id}
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
               className={`group relative overflow-hidden rounded-2xl transform transition-all duration-500 hover:scale-105 ${
                 isDark ? 'bg-gray-900 border border-gray-700' : 'bg-gray-50 border border-gray-200'
               } shadow-xl hover:shadow-2xl ${
@@ -130,19 +139,15 @@ const Projects: React.FC = () => {
                     : 'from-black/60 via-purple-500/20 to-transparent'
                 }`}></div>
                 <div className="absolute top-4 right-4 flex space-x-2">
-                  <button className={`p-2 backdrop-blur-sm rounded-full text-white opacity-0 group-hover:opacity-100 transition-all duration-500 hover:scale-110 ${
-                    isDark ? 'bg-cyan-500/30 hover:bg-cyan-500/50' : 'bg-white/20 hover:bg-white/30'
-                  }`}>
-                    <Eye className="w-4 h-4" />
-                  </button>
-                  <button className={`p-2 backdrop-blur-sm rounded-full text-white opacity-0 group-hover:opacity-100 transition-all duration-500 hover:scale-110 ${
-                    isDark ? 'bg-purple-500/30 hover:bg-purple-500/50' : 'bg-white/20 hover:bg-white/30'
+                 
+                  <span className={`p-2 backdrop-blur-sm rounded-full text-white opacity-0 group-hover:opacity-100 transition-all duration-500 ${
+                    isDark ? 'bg-purple-500/30' : 'bg-white/20'
                   }`}>
                     <ExternalLink className="w-4 h-4" />
-                  </button>
+                  </span>
                 </div>
                 
-                {/* Floating elements on hover */}
+             
                 <div className="absolute inset-0 pointer-events-none">
                   <Star className={`absolute top-6 left-6 w-4 h-4 opacity-0 group-hover:opacity-60 transition-all duration-700 ${
                     isDark ? 'text-cyan-400' : 'text-purple-400'
@@ -184,7 +189,7 @@ const Projects: React.FC = () => {
                   ))}
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

@@ -8,14 +8,14 @@ import Contact from './components/Contact';
 import { ThemeContext } from './contexts/ThemeContext';
 
 function App() {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true); // default to dark
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       setIsDark(savedTheme === 'dark');
     } else {
-      setIsDark(window.matchMedia('(prefers-color-scheme: dark)').matches);
+      setIsDark(true); // force dark as default if nothing saved
     }
   }, []);
 
@@ -34,9 +34,11 @@ function App() {
 
   return (
     <ThemeContext.Provider value={{ isDark, toggleTheme }}>
-      <div className={`min-h-screen transition-colors duration-500 ${
-        isDark ? 'bg-gray-900' : 'bg-white'
-      }`}>
+      <div
+        className={`min-h-screen transition-colors duration-500 ${
+          isDark ? 'bg-gray-900' : 'bg-white'
+        }`}
+      >
         <Header />
         <Hero />
         <About />
