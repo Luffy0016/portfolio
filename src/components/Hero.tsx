@@ -14,8 +14,7 @@ const Hero: React.FC = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-
-       
+ 
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {isDark ? (
           <>
@@ -49,11 +48,10 @@ const Hero: React.FC = () => {
           </>
         )}
       </div>
-
-      
+ 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in-up">
-
+ 
           <div className="flex justify-center mb-6">
             <div className={`inline-flex items-center px-6 py-3 rounded-full text-sm font-medium backdrop-blur-md border transition-all duration-500 hover:scale-110 ${
               isDark 
@@ -65,7 +63,7 @@ const Hero: React.FC = () => {
               <Star className="w-4 h-4 ml-2 animate-spin-slow" />
             </div>
           </div>
-
+ 
           <h1 className={`text-5xl md:text-7xl lg:text-8xl font-bold mb-6 ${
             isDark ? 'text-white' : 'text-gray-900'
           }`}>
@@ -78,7 +76,7 @@ const Hero: React.FC = () => {
               Digital Experiences
             </span>
           </h1>
-
+ 
           <p className={`text-xl md:text-2xl mb-8 max-w-3xl mx-auto animate-fade-in-up-delay ${
             isDark ? 'text-gray-300' : 'text-gray-600'
           }`}>
@@ -87,7 +85,9 @@ const Hero: React.FC = () => {
             <span className={`font-semibold ${isDark ? 'text-purple-400' : 'text-pink-600'}`}> functional</span> digital experiences.
           </p>
 
+          
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+
             
             <button className={`group relative px-8 py-4 rounded-full font-semibold text-lg transition-all duration-500 transform hover:scale-110 overflow-hidden ${
               isDark
@@ -101,9 +101,9 @@ const Hero: React.FC = () => {
               </span>
             </button>
 
-          
+             
             <a
-              href="/your-cv.pdf"  
+              href="/R.Mahadev CV.pdf"   
               target="_blank"
               rel="noopener noreferrer"
               className={`group px-8 py-4 rounded-full font-semibold text-lg border-2 transition-all duration-500 hover:scale-110 backdrop-blur-sm ${
