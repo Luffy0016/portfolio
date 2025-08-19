@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Github, Linkedin, Instagram } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
-import emailjs from '@emailjs/browser';
 
 const Contact: React.FC = () => {
   const { isDark } = useTheme();
@@ -11,42 +10,15 @@ const Contact: React.FC = () => {
     subject: '',
     message: ''
   });
-  const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
-
-    emailjs
-      .send(
-        'service_z4vyo9e',        //  Service ID
-        'template_7n00iw8',       //  Template ID
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-        },
-        'Rp0B6L0ss0B6nkKKH'       // Public Key
-      )
-      .then(() => {
-        setLoading(false);
-        setSuccess(true);
-        setFormData({ name: '', email: '', subject: '', message: '' });
-      })
-      .catch((err) => {
-        setLoading(false);
-        console.error('Email sending error:', err);
-        alert('Failed to send message. Please try again.');
-      });
+    
+    console.log('Form submitted:', formData);
   };
 
   const contactInfo = [
@@ -64,6 +36,7 @@ const Contact: React.FC = () => {
   return (
     <section id="contact" className={`py-20 ${isDark ? 'bg-gray-800' : 'bg-white'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Heading */}
         <div className="text-center mb-16">
           <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
             Let's Work Together
@@ -73,12 +46,16 @@ const Contact: React.FC = () => {
           </p>
         </div>
 
+        {/* Grid */}
         <div className="grid lg:grid-cols-2 gap-12">
-          <div className={`p-8 rounded-2xl ${isDark ? 'bg-gray-900 border border-gray-700' : 'bg-gray-50 border border-gray-200'} shadow-xl`}>
+         
+          <div className={`p-8 rounded-2xl ${
+            isDark ? 'bg-gray-900 border border-gray-700' : 'bg-gray-50 border border-gray-200'
+          } shadow-xl`}>
             <h3 className={`text-2xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
               Send Me a Message
             </h3>
-            
+
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
@@ -95,6 +72,7 @@ const Contact: React.FC = () => {
                     }`}
                   />
                 </div>
+
                 <div>
                   <label className={`block text-sm font-medium mb-2 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Email</label>
                   <input
@@ -164,7 +142,7 @@ const Contact: React.FC = () => {
             </form>
           </div>
 
-          
+         
           <div className="space-y-8">
             <div className={`p-8 rounded-2xl ${isDark ? 'bg-gray-900 border border-gray-700' : 'bg-gray-50 border border-gray-200'} shadow-xl`}>
               <h3 className={`text-2xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Get In Touch</h3>
