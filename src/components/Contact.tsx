@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Instagram } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 
 const Contact: React.FC = () => {
@@ -20,20 +20,20 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
+    
     console.log('Form submitted:', formData);
   };
 
   const contactInfo = [
-    { icon: Mail, label: 'Email', value: 'hello@designer.com', href: 'mailto:hello@designer.com' },
-    { icon: Phone, label: 'Phone', value: '+1 (555) 123-4567', href: 'tel:+15551234567' },
-    { icon: MapPin, label: 'Location', value: 'San Francisco, CA', href: '#' }
+    { icon: Mail, label: 'Email', value: 'mahadevr385@gmail.com', href: 'mailto:mahadevr385@gmail.com' },
+    { icon: Phone, label: 'Phone', value: '+91 6238040266', href: 'tel:+916238040266' },
+    { icon: MapPin, label: 'Location', value: 'India, Kerala',  }
   ];
 
   const socialLinks = [
-    { icon: Github, label: 'GitHub', href: '#' },
-    { icon: Linkedin, label: 'LinkedIn', href: '#' },
-    { icon: Twitter, label: 'Twitter', href: '#' }
+    { icon: Github, label: 'GitHub', href: 'https://github.com/Luffy0016' },
+    { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/r-mahadev/' },
+    { icon: Instagram, label: 'instagram', href: 'https://www.instagram.com/_r_mahadev_/' }
   ];
 
   return (
@@ -49,7 +49,7 @@ const Contact: React.FC = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
+         
           <div className={`p-8 rounded-2xl ${
             isDark ? 'bg-gray-900 border border-gray-700' : 'bg-gray-50 border border-gray-200'
           } shadow-xl`}>
@@ -151,7 +151,7 @@ const Contact: React.FC = () => {
             </form>
           </div>
 
-          {/* Contact Info */}
+         
           <div className="space-y-8">
             <div className={`p-8 rounded-2xl ${
               isDark ? 'bg-gray-900 border border-gray-700' : 'bg-gray-50 border border-gray-200'

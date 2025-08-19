@@ -34,7 +34,7 @@ const About: React.FC = () => {
       if (!inView) return;
 
       let start = 0;
-      const duration = 1000; // 1 second
+      const duration = 2000;  
       const stepTime = Math.max(Math.floor(duration / target), 20);
 
       const timer = setInterval(() => {
@@ -52,6 +52,7 @@ const About: React.FC = () => {
   return (
     <section id="about" className={`py-20 ${isDark ? 'bg-gray-900' : 'bg-gray-50'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ 
         <div className="text-center mb-16">
           <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
             About Me
@@ -61,12 +62,26 @@ const About: React.FC = () => {
             modern, and user-friendly digital experiences.
           </p>
         </div>
-
+ 
         <div
           className={`flex flex-col lg:flex-row items-center justify-between p-12 rounded-2xl ${
             isDark ? 'bg-gray-800 border border-gray-700' : 'bg-white border border-gray-200'
           } shadow-2xl mb-16`}
         >
+     
+<div className="flex-shrink-0 flex items-center justify-center -mt-4 mb-8 lg:mt-0 lg:mb-0 lg:pr-8 lg:order-last">
+  <div
+    className={`w-56 h-56 lg:w-72 lg:h-72 rounded-full flex items-center justify-center text-5xl lg:text-6xl font-bold transition-transform transform hover:scale-105 hover:shadow-2xl ${
+      isDark
+        ? 'bg-gray-700 text-white hover:shadow-purple-700/40'
+        : 'bg-gray-200 text-gray-800 hover:shadow-purple-300/40'
+    }`}
+  >
+    RM
+  </div>
+</div>
+
+          
           <div className="lg:w-2/3">
             <h3 className={`text-2xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
               My Design Philosophy
@@ -86,20 +101,9 @@ const About: React.FC = () => {
               my goal is to merge creativity and logic—designing experiences that look modern and feel effortless.
             </p>
           </div>
-
-          <div className="flex-shrink-0 flex items-center justify-center lg:pr-8 mt-10 lg:mt-0">
-            <div
-              className={`w-72 h-72 rounded-full flex items-center justify-center text-6xl font-bold transition-transform transform hover:scale-105 hover:shadow-2xl ${
-                isDark
-                  ? 'bg-gray-700 text-white hover:shadow-purple-700/40'
-                  : 'bg-gray-200 text-gray-800 hover:shadow-purple-300/40'
-              }`}
-            >
-              RM
-            </div>
-          </div>
         </div>
 
+        
         <div id="stats-section" className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <div

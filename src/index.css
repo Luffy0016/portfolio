@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Enhanced Animations */
+ 
 @keyframes float {
   0%, 100% {
     transform: translateY(0px);
@@ -293,7 +293,7 @@
   }
 }
 
-/* Animation Classes */
+ 
 .animate-float { animation: float 6s ease-in-out infinite; }
 .animate-float-organic { animation: float-organic 8s ease-in-out infinite; }
 .animate-morph { animation: morph 12s ease-in-out infinite; }
@@ -319,10 +319,10 @@
 .animate-fade-in-up-delay { animation: fade-in-up-delay 1s ease-out 0.5s both; }
 .animate-gradient { background-size: 400% 400%; animation: gradient 3s ease infinite; }
 
-/* Utility Classes */
-.bg-300% { background-size: 300% 100%; }
+ 
+ <element class="bg-300">{ background-size: 300% 100%; }
 
-/* Glow Effects */
+ 
 .glow-cyan { box-shadow: 0 0 20px rgba(6, 182, 212, 0.5); }
 .glow-purple { box-shadow: 0 0 20px rgba(139, 92, 246, 0.5); }
 .glow-pink { box-shadow: 0 0 20px rgba(236, 72, 153, 0.5); }
@@ -330,20 +330,20 @@
 .glow-cyan-soft { box-shadow: 0 0 15px rgba(6, 182, 212, 0.3); }
 .glow-button-dark { box-shadow: 0 0 30px rgba(6, 182, 212, 0.4); }
 
-/* Hide Scrollbar completely */
+ 
 ::-webkit-scrollbar { display: none; }
 html { -ms-overflow-style: none; scrollbar-width: none; }
 
-/* Smooth scrolling */
+ 
 html { scroll-behavior: smooth; }
 
-/* Custom focus styles */
+ 
 *:focus {
   outline: none;
   box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.3);
 }
 
-/* Animation delays for staggered effects */
+ 
 .delay-100 { animation-delay: 0.1s; }
 .delay-200 { animation-delay: 0.2s; }
 .delay-300 { animation-delay: 0.3s; }

@@ -37,36 +37,6 @@ const Projects: React.FC = () => {
       year: '2024',
       link: 'https://luffy0016.github.io/mahadev-portfolio.github.io/'
     },
-    {
-      id: 4,
-      title: 'Healthcare App',
-      description: 'Patient-focused mobile application for healthcare management and telemedicine.',
-      image: 'https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=800',
-      category: 'mobile',
-      tags: ['Healthcare', 'Mobile', 'Accessibility'],
-      year: '2023',
-      link: 'https://your-healthcare-app.com'
-    },
-    {
-      id: 5,
-      title: 'Food Delivery Brand',
-      description: 'Complete brand identity and digital experience for a sustainable food delivery service.',
-      image: 'https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=800',
-      category: 'branding',
-      tags: ['Branding', 'Identity', 'Sustainability'],
-      year: '2023',
-      link: 'https://your-food-delivery-brand.com'
-    },
-    {
-      id: 6,
-      title: 'Learning Platform',
-      description: 'Interactive online learning platform with gamification elements.',
-      image: 'https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=800',
-      category: 'web',
-      tags: ['Education', 'Gamification', 'Interactive'],
-      year: '2023',
-      link: 'https://your-learning-platform.com'
-    }
   ];
 
   const filters = [
