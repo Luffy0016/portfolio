@@ -25,11 +25,11 @@ const Skills: React.FC = () => {
       title: 'Design Tools',
       icon: Palette,
       skills: [
-        { name: 'Figma', level: 65 },
-        { name: 'Adobe XD', level: 20 },
-        { name: 'Framer', level: 15 },
-        { name: 'Photoshop', level: 38 },
-        { name: 'Illustrator', level: 22 }
+        { name: 'Figma', level: 85 },
+        { name: 'Canva', level:50 },
+        { name: 'Framer', level: 12 },
+        { name: 'GIMP', level: 35 },
+        { name: 'Inkscape', level: 30 }
       ]
     },
     {
@@ -38,20 +38,20 @@ const Skills: React.FC = () => {
       skills: [
         { name: 'HTML/CSS', level: 92 },
         { name: 'JavaScript', level: 65 },
-        { name: 'React', level: 20 },
-        { name: 'Vue.js', level: 15 },
-        { name: 'Tailwind CSS', level: 30 }
+        { name: 'React', level: 35 },
+        { name: 'Vue.js', level: 20 },
+        { name: 'Tailwind CSS', level: 60 }
       ]
     },
     {
       title: 'UX Research',
       icon: Users,
       skills: [
-        { name: 'User Interviews', level: 30 },
-        { name: 'Usability Testing', level: 68 },
-        { name: 'A/B Testing', level: 55 },
-        { name: 'Analytics', level: 52 },
-        { name: 'Wireframing', level: 65 }
+        { name: 'User Interviews', level: 15 },
+        { name: 'Usability Testing', level: 55 },
+        { name: 'A/B Testing', level: 25 },
+        { name: 'Analytics', level: 20 },
+        { name: 'Wireframing', level: 75}
       ]
     }
   ];
