@@ -25,11 +25,11 @@ const Skills: React.FC = () => {
       title: 'Design Tools',
       icon: Palette,
       skills: [
-        { name: 'Figma', level: 95 },
-        { name: 'Adobe XD', level: 60 },
-        { name: 'Sketch', level: 85 },
-        { name: 'Photoshop', level: 88 },
-        { name: 'Illustrator', level: 42 }
+        { name: 'Figma', level: 65 },
+        { name: 'Adobe XD', level: 20 },
+        { name: 'Framer', level: 15 },
+        { name: 'Photoshop', level: 38 },
+        { name: 'Illustrator', level: 22 }
       ]
     },
     {
@@ -50,8 +50,8 @@ const Skills: React.FC = () => {
         { name: 'User Interviews', level: 30 },
         { name: 'Usability Testing', level: 68 },
         { name: 'A/B Testing', level: 55 },
-        { name: 'Analytics', level: 72 },
-        { name: 'Wireframing', level: 95 }
+        { name: 'Analytics', level: 52 },
+        { name: 'Wireframing', level: 65 }
       ]
     }
   ];
