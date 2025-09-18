@@ -40,7 +40,7 @@ const Skills: React.FC = () => {
         { name: 'JavaScript', level: 65 },
         { name: 'React', level: 35 },
         { name: 'Vue.js', level: 20 },
-        { name: 'Tailwind CSS', level: 60 }
+        { name: 'Tailwind CSS', level: 60 },
         { name: 'React', level: 35 },
         { name: 'Vue.js', level: 20 },
         { name: 'Tailwind CSS', level: 60 }
@@ -54,7 +54,7 @@ const Skills: React.FC = () => {
         { name: 'Usability Testing', level: 55 },
         { name: 'A/B Testing', level: 25 },
         { name: 'Analytics', level: 20 },
-        { name: 'Wireframing', level: 75}
+        { name: 'Wireframing', level: 75},
         { name: 'User Interviews', level: 15 },
         { name: 'Usability Testing', level: 55 },
         { name: 'A/B Testing', level: 25 },
