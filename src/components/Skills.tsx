@@ -27,9 +27,10 @@ const Skills: React.FC = () => {
       skills: [
         { name: 'Figma', level: 85 },
         { name: 'Canva', level:50 },
-        { name: 'Framer', level: 12 },
-        { name: 'GIMP', level: 35 },
-        { name: 'Inkscape', level: 30 }
+        { name: 'Adobe XD', level: 20 },
+        { name: 'Framer', level: 15 },
+        { name: 'Photoshop', level: 28 },
+        { name: 'Illustrator', level: 22 }
       ]
     },
     {
