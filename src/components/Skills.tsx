@@ -27,10 +27,9 @@ const Skills: React.FC = () => {
       skills: [
         { name: 'Figma', level: 85 },
         { name: 'Canva', level:50 },
-        { name: 'Adobe XD', level: 20 },
-        { name: 'Framer', level: 15 },
-        { name: 'Photoshop', level: 28 },
-        { name: 'Illustrator', level: 22 }
+        { name: 'Framer', level: 12 },
+        { name: 'Photoshop', level: 35 },
+        { name: 'Illustrator', level: 30 }
       ]
     },
     {
@@ -42,12 +41,20 @@ const Skills: React.FC = () => {
         { name: 'React', level: 35 },
         { name: 'Vue.js', level: 20 },
         { name: 'Tailwind CSS', level: 60 }
+        { name: 'React', level: 35 },
+        { name: 'Vue.js', level: 20 },
+        { name: 'Tailwind CSS', level: 60 }
       ]
     },
     {
       title: 'UX Research',
       icon: Users,
       skills: [
+        { name: 'User Interviews', level: 15 },
+        { name: 'Usability Testing', level: 55 },
+        { name: 'A/B Testing', level: 25 },
+        { name: 'Analytics', level: 20 },
+        { name: 'Wireframing', level: 75}
         { name: 'User Interviews', level: 15 },
         { name: 'Usability Testing', level: 55 },
         { name: 'A/B Testing', level: 25 },
